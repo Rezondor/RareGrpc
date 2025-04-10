@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Rare.Client.Api";
+
+package rareGenerator;
+
+service RareGenerator {
+  rpc Generate (GenerateRequest) returns (GenerateReply);
+}
+
+message GenerateRequest {
+  repeated RareWithChance RareChances = 1;
+}
+
+message RareWithChance{
+	string name = 1;
+	int32 count = 2;
+}
+
+message GenerateReply {
+  string message = 1;
+}
