@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rare.Client.Api", "Rare.Client.Api\Rare.Client.Api.csproj", "{00DDBE03-C4DA-4583-8978-737DC6535458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rare.Client.Api", "Rare.Client.Api\Rare.Client.Api.csproj", "{00DDBE03-C4DA-4583-8978-737DC6535458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

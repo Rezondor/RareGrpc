@@ -12,10 +12,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Rare.Generator/Rare.Generator.Server/Rare.Generator.Server.csproj", "Rare.Generator/Rare.Generator.Server/"]
-RUN dotnet restore "./Rare.Generator/Rare.Generator.Server/Rare.Generator.Server.csproj"
+COPY ["Rare.Generator.Server/Rare.Generator.Server.csproj", "Rare.Generator.Server/"]
+RUN dotnet restore "./Rare.Generator.Server/Rare.Generator.Server.csproj"
 COPY . .
-WORKDIR "/src/Rare.Generator/Rare.Generator.Server"
+WORKDIR "/src/Rare.Generator.Server"
 RUN dotnet build "./Rare.Generator.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # Этот этап используется для публикации проекта службы, который будет скопирован на последний этап
