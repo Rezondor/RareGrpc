@@ -18,6 +18,7 @@ public class Program
         builder.Services.AddSingleton(services =>
         {
             var grpcSettings = builder.Configuration.GetSection("GrpcSettings");
+            Console.WriteLine(grpcSettings["ServerUrl"]);
             var channel = GrpcChannel.ForAddress(grpcSettings["ServerUrl"] ?? throw new ArgumentNullException("Grpc link is null"), new GrpcChannelOptions
             {
                 MaxReceiveMessageSize = 16 * 1024 * 1024, // 16 MB
@@ -39,7 +40,6 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
 
         app.MapControllers();
 

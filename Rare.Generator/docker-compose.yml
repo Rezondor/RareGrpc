@@ -1,0 +1,14 @@
+services:
+  rare-generator-backend:
+    image: ${DOCKER_REGISTRY-}raregeneratorserver
+    container_name: backend
+    build:
+      context: ..
+      dockerfile: Rare.Generator/Rare.Generator.Server/Dockerfile
+
+  rare-api:
+    image: ${DOCKER_REGISTRY-}rareclientapi
+    container_name: client
+    build:
+      context: ..
+      dockerfile: Rare.Client/Rare.Client.Api/Dockerfile
